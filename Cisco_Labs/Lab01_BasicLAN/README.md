@@ -12,8 +12,6 @@
 4. Изучить ARP-таблицу ПК и MAC-таблицу коммутатора.
 
 ## Содержимое папки  
-- `lab01.pkt` — топология в Cisco Packet Tracer  
-- `topology.png` — схема сети  
-- `arp_ping.png` — скриншот результатов ping и ARP  
-- `switch_mac_table.png` — скрин MAC-таблицы коммутатора  
-- `notes.md` — подробные заметки по лабораторной  
+- `lab01BasicLAN.pkt` — топология в Cisco Packet Tracer  
+- `images` — скрины  
+- `notes.md` — подробные заметки по лаб работе
