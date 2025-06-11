@@ -17,10 +17,15 @@
 
 ## Скриншоты
 
-- ![Топология](topology.png)
-- ![Ping](ping_results.png)
-- ![MAC-таблица](mac_table.png)
-- ![ARP-таблицы](arp_tables.png)
+![Топология](images/topology.png)
+
+---
+
+![Ping](images/ping_arp.png)
+
+---
+  
+![MAC-таблица](images/mac_table.png)
 
 ## Вывод
 
