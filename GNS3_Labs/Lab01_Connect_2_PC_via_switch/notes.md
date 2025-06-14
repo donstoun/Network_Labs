@@ -6,7 +6,7 @@
   - Windows 10 → FastEthernet0/1
   - Kali Linux → FastEthernet0/2
 
-![topology](images/topology.png)
+![Топология](images/topology.png)
 
 - Назначил статические IP:
   - Windows 10: `192.168.1.2/24`
