@@ -33,7 +33,7 @@
 ![pc2](images/ip_set_pc2.png)
 
 
-- Выполнен ping между ПК1 и ПК4 — успешно.
+- Выполнен ping с ПК1 на остальные ПК - успешно.
 
 ![ping](images/ping.png)
 
