@@ -36,7 +36,7 @@ interface GigabitEthernet0/0
 ip address 192.168.10.1 255.255.255.0
 no shutdown                         # Включаем интерфейс
 
-interface GigabitEthernet0/1
+interface GigabitEthernet1/0
 ip address 10.10.10.1 255.255.255.252
 no shutdown
 ```
