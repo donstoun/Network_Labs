@@ -1,4 +1,4 @@
-### MikroTik
+## MikroTik
 
 /ip dhcp-server print - показать список DHCP-серверов  
 /ip dhcp-server disable dhcp1 - отключить DHCP-сервер dhcp1  
@@ -6,7 +6,7 @@
 /ip dhcp-relay add name=relay1 interface=ether2 dhcp-server=192.168.10.2 local-address=172.16.10.1 - создать DHCP Relay на MikroTik  
 /ip dhcp-relay enable relay1 - включить DHCP Relay  
 
-### Ubuntu (DHCP server isc-dhcp-server)
+## Ubuntu (DHCP server isc-dhcp-server)
 
 sudo apt install isc-dhcp-server -y - Устанавливаем DHCP-сервер
 
@@ -34,12 +34,12 @@ sudo dhcpd -t -cf /etc/dhcp/dhcpd.conf - Проверка конфигураци
 
 sudo systemctl restart isc-dhcp-server - Запуск службы
 
-### Windows (клиент)
+## Windows (клиент)
 
 /ipconfig /release - освободить текущий IP-адрес  
 /ipconfig /renew - запросить новый IP-адрес  
 
-### Клиенты Linux (Ubuntu)
+## Клиент Linux (Ubuntu)
 
 /sbin/dhclient - запустить DHCP-клиент для получения IP  
 
