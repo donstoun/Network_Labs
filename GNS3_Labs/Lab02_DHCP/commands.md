@@ -8,15 +8,31 @@
 
 ### Ubuntu (DHCP server isc-dhcp-server)
 
-/etc/default/isc-dhcp-server: INTERFACESv4="ens3" - указать интерфейс для DHCP-сервера  
-sudo apt install isc-dhcp-server - установить пакет DHCP-сервера  
-sudo nano /etc/dhcp/dhcpd.conf - редактировать конфигурацию DHCP  
-(subnet 192.168.10.0 ...) - задать пул и параметры первой подсети  
-(subnet 172.16.10.0 ...) - задать пул и параметры второй подсети  
-sudo ip addr add 192.168.10.2/24 dev ens3 - назначить статический IP серверу  
-sudo systemctl restart isc-dhcp-server - перезапустить сервис DHCP  
-sudo dhcp-lease-list - показать текущие аренды  
-add address=192.168.10.105 mac-address=0c:a2:21:ee:00:00 comment="Ubuntu fixed IP" server=dhcp1 - создать статическую аренду  
+sudo apt install isc-dhcp-server -y - Устанавливаем DHCP-сервер
+
+INTERFACESv4="ens3" - Указываем интерфейс для работы (редактируем /etc/default/isc-dhcp-server)
+
+#### Настройка пула адресов (редактируем /etc/dhcp/dhcpd.conf)
+subnet 192.168.10.0 netmask 255.255.255.0 {
+    range 192.168.10.10 192.168.10.99;
+    option routers 192.168.10.1;
+    option domain-name-servers 8.8.8.8;
+    default-lease-time 86400;
+    max-lease-time 86400;
+}
+
+#### Добавление второй подсети для работы через DHCP Relay
+subnet 172.16.10.0 netmask 255.255.255.0 {
+    range 172.16.10.10 172.16.10.99;
+    option routers 172.16.10.1;
+    option domain-name-servers 8.8.8.8;
+    default-lease-time 86400;
+    max-lease-time 86400;
+}
+
+sudo dhcpd -t -cf /etc/dhcp/dhcpd.conf - Проверка конфигурации
+
+sudo systemctl restart isc-dhcp-server - Запуск службы
 
 ### Windows (клиент)
 
