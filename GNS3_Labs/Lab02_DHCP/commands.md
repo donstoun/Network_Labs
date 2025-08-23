@@ -13,22 +13,22 @@ sudo apt install isc-dhcp-server -y - Устанавливаем DHCP-серве
 INTERFACESv4="ens3" - Указываем интерфейс для работы (редактируем /etc/default/isc-dhcp-server)
 
 #### Настройка пула адресов (редактируем /etc/dhcp/dhcpd.conf)
-subnet 192.168.10.0 netmask 255.255.255.0 {
+`subnet 192.168.10.0 netmask 255.255.255.0 {
     range 192.168.10.10 192.168.10.99;
     option routers 192.168.10.1;
     option domain-name-servers 8.8.8.8;
     default-lease-time 86400;
     max-lease-time 86400;
-}
+}`
 
 #### Добавление второй подсети для работы через DHCP Relay
-subnet 172.16.10.0 netmask 255.255.255.0 {
+`subnet 172.16.10.0 netmask 255.255.255.0 {
     range 172.16.10.10 172.16.10.99;
     option routers 172.16.10.1;
     option domain-name-servers 8.8.8.8;
     default-lease-time 86400;
     max-lease-time 86400;
-}
+}`
 
 sudo dhcpd -t -cf /etc/dhcp/dhcpd.conf - Проверка конфигурации
 
